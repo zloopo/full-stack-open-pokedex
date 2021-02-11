@@ -3,10 +3,9 @@ name: Deployment pipeline
 on:
   push:
     branches:
-      - master
-
-jobs:
-  simple_deployment_pipeline:
+           - master
+           
+ple_deployment_pipeline:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -32,5 +31,4 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "safe-escarpment-40383"
-          heroku_email: "dan.seliayeu@gmail.com"
-          
+          heroku_email: "dan.s"dan.seliayeu@gmail.com"
