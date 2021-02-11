@@ -28,7 +28,6 @@ jobs:
             wait-on: http://localhost:5000
         - name: deploy
           uses: akhileshns/heroku-deploy@v3.10.9
-
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
             heroku_app_name: "safe-escarpment-40383"
             heroku_email: "dan.seliayeu@gmail.com"
