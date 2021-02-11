@@ -32,3 +32,5 @@ jobs:
               heroku_api_key: ${{secrets.HEROKU_API_KEY}}
               heroku_app_name: "safe-escarpment-40383"
               heroku_email: "dan.seliayeu@gmail.com"
+              healthcheck: "https://safe-escarpment-40383.herokuapp.com/health"
+              checkstring: "ok"
