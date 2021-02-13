@@ -1,4 +1,4 @@
-name: Deployment pipeline
+name: Periodic healtcheck
 
 on:
   schedule:
