@@ -46,3 +46,26 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             DEFAULT_BUMP: patch
+        - name: notify slack on success()
+          uses: 8398a7/action-slack@v3
+          with:
+            status: custom
+            fields: commit,author,took
+            custom_payload: |
+              {
+                attachments: [{
+                  color: 'good',
+                  text: `a new version deployed to https://safe-escarpment-40383.herokuapp.com/ (${process.env.AS_COMMIT}) by ${process.env.AS_AUTHOR} took ${process.env.AS_TOOK}`
+                }]
+              }
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          if: success()
+        - name: notify slack on failure()
+          uses: 8398a7/action-slack@v3
+          with:
+            status: ${{ job.status }}
+            fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          if: failure()          
