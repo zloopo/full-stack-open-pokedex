@@ -26,5 +26,5 @@ jobs:
       - name: commit that should not show up
         env:
           COMMIT_MESSAGES: ${{ toJson(join(github.event.commits.*.message)) }}
-        if: "!contains(toJson(join(github.event.commits.*.message)), "#skip")"
+        if: contains(toJson(join(github.event.commits.*.message)), "#skip") != true
         run: echo "$COMMIT_MESSAGES"
