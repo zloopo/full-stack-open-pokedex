@@ -34,3 +34,4 @@ jobs:
               heroku_email: "dan.seliayeu@gmail.com"
               healthcheck: "https://safe-escarpment-40383.herokuapp.com/health"
               checkstring: "ok"
+              rollbackonhealthcheckfailed: true
