@@ -1,0 +1,1 @@
+Exercise 11.21 done in https://github.com/zloopo/blog-list-app
